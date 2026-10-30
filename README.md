@@ -67,6 +67,8 @@ The calendar alone gets 88.7% on December. What it can't know is whether the pla
 | **Tuned, class-weighted XGBoost (final)** | **0.925** | **0.997** |
 | Tuned LightGBM / XGBoost + LightGBM average | 0.924 | 0.997 |
 
+I also tried two more activity groups with the final settings fixed: the same "today so far" summaries for reactive power and power factor, and how long the plant has been running (time since usage first passed 10 kWh, length of the current busy run). Both lowered CV macro F1 (0.9239 and 0.9228, against 0.9245; 0.9191 together), so I left them out.
+
 Fold 1 trains on January-February only and has never seen the March-October schedule it's tested on, so it stays around 0.63 whatever the model. Folds 2-5 show the real differences.
 
 **What each step added on December.**
